@@ -1,0 +1,55 @@
+{
+  "name": "feathers-verification-emails",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Imre Gelens"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": "^8.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "test": "npm run eslint && npm run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "start": "node src/",
+    "mocha": "mocha test/ --recursive --exit"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^2.1.1",
+    "@feathersjs/authentication-jwt": "^1.0.2",
+    "@feathersjs/authentication-local": "^1.1.0",
+    "@feathersjs/configuration": "^1.0.2",
+    "@feathersjs/errors": "^3.2.2",
+    "@feathersjs/express": "^1.2.0",
+    "@feathersjs/feathers": "^3.1.1",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "feathers-authentication-management": "^2.0.0",
+    "feathers-hooks-common": "^4.7.0",
+    "feathers-mailer": "^2.0.0",
+    "feathers-nedb": "^3.0.0",
+    "helmet": "^3.10.0",
+    "nedb": "^1.8.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "serve-favicon": "^2.4.5",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "mocha": "^4.1.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}

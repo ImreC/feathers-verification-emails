@@ -1,6 +1,7 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const verifyHooks = require('feathers-authentication-management').hooks;
 const accountService = require('../authmanagement/notifier');
+const commonHooks = require('feathers-hooks-common');
 
 const {
   hashPassword, protect
@@ -15,8 +16,27 @@ module.exports = {
       hashPassword(),
       verifyHooks.addVerification()
     ],
-    update: [ hashPassword(),  authenticate('jwt') ],
-    patch: [ hashPassword(),  authenticate('jwt') ],
+    update: [
+      commonHooks.disallow('external')
+    ],
+    patch: [
+      commonHooks.iff(
+        commonHooks.isProvider('external'),
+          commonHooks.preventChanges(
+            'email',
+            'isVerified',
+            'verifyToken',
+            'verifyShortToken',
+            'verifyExpires',
+            'verifyChanges',
+            'resetToken',
+            'resetShortToken',
+            'resetExpires'
+          ),
+          hashPassword(),
+          authenticate('jwt')
+        )
+    ],
     remove: [ authenticate('jwt') ]
   },
 

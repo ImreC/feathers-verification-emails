@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@feathersjs/authentication": "^2.1.1",
-    "@feathersjs/authentication-jwt": "^1.0.2",
+    "@feathersjs/authentication-jwt": "^2.0.10",
     "@feathersjs/authentication-local": "^1.1.0",
     "@feathersjs/configuration": "^1.0.2",
     "@feathersjs/errors": "^3.2.2",
@@ -49,7 +49,7 @@
   "devDependencies": {
     "eslint": "^4.17.0",
     "mocha": "^4.1.0",
-    "request": "^2.83.0",
+    "request": "^2.88.0",
     "request-promise": "^4.2.2"
   }
 }

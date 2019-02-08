@@ -22,8 +22,8 @@ module.exports = {
     patch: [
       commonHooks.iff(
         commonHooks.isProvider('external'),
-          commonHooks.preventChanges(
-            'email',
+          commonHooks.preventChanges(true,
+            ['email',
             'isVerified',
             'verifyToken',
             'verifyShortToken',
@@ -31,7 +31,7 @@ module.exports = {
             'verifyChanges',
             'resetToken',
             'resetShortToken',
-            'resetExpires'
+            'resetExpires']
           ),
           hashPassword(),
           authenticate('jwt')

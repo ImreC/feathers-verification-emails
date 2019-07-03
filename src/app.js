@@ -3,7 +3,10 @@ const favicon = require('serve-favicon');
 const compress = require('compression');
 const cors = require('cors');
 const helmet = require('helmet');
-const logger = require('winston');
+const winston = require('winston');
+const logger = winston.createLogger({
+  transports: new winston.transports.Console()
+});
 
 const feathers = require('@feathersjs/feathers');
 const configuration = require('@feathersjs/configuration');

@@ -1,5 +1,6 @@
 # feathers-verification-emails
 
+# This project is no longer maintained and contains security vulnerabilities. Please use as a reference only.
 >
 
 ## About
